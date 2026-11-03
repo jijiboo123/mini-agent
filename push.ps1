@@ -12,6 +12,10 @@ $ErrorActionPreference = "Continue"
 $env:Path = [Environment]::GetEnvironmentVariable('Path', 'User') + ';' + [Environment]::GetEnvironmentVariable('Path', 'Machine')
 Set-Location -Path $PSScriptRoot
 
+$logPath = Join-Path $PSScriptRoot "push-log.txt"
+try { Start-Transcript -Path $logPath -Force | Out-Null } catch { }
+Write-Host "日志文件：$logPath" -ForegroundColor DarkGray
+
 function Info($m) { Write-Host "[i] $m" -ForegroundColor Cyan }
 function Ok($m) { Write-Host "[OK] $m" -ForegroundColor Green }
 function Warn($m) { Write-Host "[!] $m" -ForegroundColor Yellow }
@@ -96,3 +100,4 @@ else {
 }
 
 Read-Host "按回车退出" | Out-Null
+try { Stop-Transcript | Out-Null } catch { }
