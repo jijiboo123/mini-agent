@@ -6,3 +6,5 @@ notes.md
 demo.db
 *.trace.jsonl
 .venv/
+pytest-cache-files-*/
+runs/
