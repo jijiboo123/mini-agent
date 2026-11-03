@@ -94,6 +94,7 @@ class ToolRegistry:
 
 def _calc(expression: str) -> Dict[str, Any]:
     """Evaluate a pure arithmetic expression without eval()."""
+    expression = expression.strip()  # BUG-002 修复：前导空格会让 compile 报 unexpected indent
     if not re.fullmatch(r"[0-9+\-*/(). %\s]+", expression):
         raise ToolError("only digits and + - * / ( ) . %% are allowed")
     try:
