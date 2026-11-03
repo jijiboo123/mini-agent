@@ -1,0 +1,27 @@
+﻿=== mini-agent 推送诊断 ===
+时间: 2026-11-03 18:52:47
+
+[1] git 版本
+    git version 2.56.0.windows.4
+
+[2] credential.helper
+    manager
+
+[3] remote
+    origin	https://github.com/jijiboo/mini-agent.git (fetch) | origin	https://github.com/jijiboo/mini-agent.git (push)
+
+[4] 分支 / 提交数
+    branch=main
+    commits=5
+
+[5] 匿名读取远端（不弹登录）
+    fatal: unable to access 'https://github.com/jijiboo/mini-agent.git/': schannel: AcquireCredentialsHandle failed: SEC_E_NO_CREDENTIALS (0x8009030e) - ��ȫ����û�п��õ�ƾ֤
+
+[6] HTTPS 打开仓库页面
+    ERR: 基础连接已经关闭: 接收时发生错误。
+
+[7] 推送（会尝试登录，失败也会记录原因）
+    exit=128
+    fatal: unable to access 'https://github.com/jijiboo/mini-agent.git/': schannel: AcquireCredentialsHandle failed: SEC_E_NO_CREDENTIALS (0x8009030e) - ��ȫ����û�п��õ�ƾ֤
+
+结论：推送失败，看上面 [5] 和 [7] 的报错原文。
