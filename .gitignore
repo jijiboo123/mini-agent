@@ -10,3 +10,5 @@ pytest-cache-files-*/
 runs/
 push-log.txt
 诊断结果.txt
+诊断结果.txt
+runs/
